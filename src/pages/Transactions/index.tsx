@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
-import { useTransationsContext } from "../../contexts/TransactionsContext";
+import { useTransactionsContext } from "../../contexts/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "./components/SearchForm";
 import * as S from "./styles";
 
 export function Transactions() {
-  const { transactions } = useTransationsContext();
+  const { transactions } = useTransactionsContext();
   return (
     <S.Wrapper>
       <Header />
