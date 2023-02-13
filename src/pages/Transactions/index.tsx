@@ -1,12 +1,12 @@
-import { Header } from "../../components/Header";
-import { Summary } from "../../components/Summary";
-import { useTransactionsContext } from "../../contexts/TransactionsContext";
-import { dateFormatter, priceFormatter } from "../../utils/formatter";
-import { SearchForm } from "./components/SearchForm";
-import * as S from "./styles";
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
+import { useTransactionsContext } from '../../contexts/TransactionsContext'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { SearchForm } from './components/SearchForm'
+import * as S from './styles'
 
 export function Transactions() {
-  const { transactions } = useTransactionsContext();
+  const { transactions } = useTransactionsContext()
   return (
     <S.Wrapper>
       <Header />
@@ -23,7 +23,7 @@ export function Transactions() {
                   <td width="50%">{transaction.description}</td>
                   <td>
                     <S.PriceHighlight variant={transaction.type}>
-                      {transaction.type === "outcome" && "- "}
+                      {transaction.type === 'outcome' && '- '}
                       {priceFormatter.format(transaction.price)}
                     </S.PriceHighlight>
                   </td>
@@ -32,11 +32,11 @@ export function Transactions() {
                     {dateFormatter.format(new Date(transaction.createdAt))}
                   </td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </S.TransactionsTable>
       </S.TransactionsContainer>
     </S.Wrapper>
-  );
+  )
 }
